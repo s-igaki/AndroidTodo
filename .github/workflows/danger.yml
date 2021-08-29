@@ -19,6 +19,8 @@ jobs:
           bundle install
       - name: run ktlintCheck
         run: ./gradlew ktlintCheck
+      - name: run detekt
+        run: ./gradlew detekt
       - name: run danger
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
