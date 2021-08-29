@@ -13,13 +13,13 @@ jobs:
         with:
           ruby-version: '2.6'
           architecture: 'x64'
-            - name: install danger
-                run: |
-                  gem install bundler
-                  bundle install
-                  - name: run ktlintCheck
-                    run: ./gradlew ktlintCheck
-                  - name: run danger
-                    env:
-                      GITHUB_TOKEN: ${{ secrets.TOKEN }}
-                    run: danger
+      - name: install danger
+          run: |
+            gem install bundler
+            bundle install
+            - name: run ktlintCheck
+              run: ./gradlew ktlintCheck
+            - name: run danger
+              env:
+                GITHUB_TOKEN: ${{ secrets.TOKEN }}
+              run: danger
